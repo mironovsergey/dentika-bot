@@ -1,0 +1,8 @@
+.app {
+    max-width: 480px;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: calc(var(--gutter) * 0.5);
+    padding-right: calc(var(--gutter) * 0.5);
+}

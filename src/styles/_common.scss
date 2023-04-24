@@ -1,0 +1,40 @@
+@use "sass:math";
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+body {
+    --duration: #{$duration};
+    --font-open-sans: #{$open-sans};
+    --bg-color: #{$bg-color};
+    --text-color: #{$text-color};
+    --button-color: #{$button-color};
+    --button-text-color: #{$button-text-color};
+    --gutter: #{$gutter};
+
+    font-family: var(--font-open-sans);
+    font-size: rem(16px);
+    font-weight: 400;
+    line-height: math.div(24, 16);
+    text-align: left;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    margin: 0;
+}
+
+html.dark body {
+    --bg-color: var(--tg-theme-bg-color);
+    --text-color: var(--tg-theme-text-color);
+}
+
+h1 {
+    font-size: rem(21px);
+    font-weight: 700;
+    letter-spacing: -0.004em;
+    line-height: math.div(29, 21);
+    margin-top: 0;
+    margin-bottom: 20px;
+}

@@ -1,0 +1,14 @@
+.offers-list {
+    display: flex;
+    flex-wrap: wrap;
+    row-gap: var(--gutter);
+    margin-left: calc(-0.5 * var(--gutter));
+    margin-right: calc(-0.5 * var(--gutter));
+
+    >* {
+        flex: 0 0 auto;
+        width: 50%;
+        padding-left: calc(var(--gutter) * 0.5);
+        padding-right: calc(var(--gutter) * 0.5);
+    }
+}
