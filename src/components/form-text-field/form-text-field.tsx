@@ -1,0 +1,27 @@
+import type { FC } from 'react';
+import type { TFormField } from '../../utils/types';
+import { useField } from 'formik';
+
+const FormTextField: FC<TFormField> = (props) => {
+    const [field, meta] = useField(props);
+    const hasError = meta.touched && meta.error;
+
+    let classNames = 'form-field';
+
+    if (hasError) {
+        classNames += ' has-error';
+    }
+
+    return (
+        <div className={classNames}>
+            <input className="form-control" {...field} {...props} />
+            {
+                hasError ? (
+                    <div className="form-error">{meta.error}</div>
+                ) : null
+            }
+        </div>
+    );
+};
+
+export default FormTextField;

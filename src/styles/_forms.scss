@@ -1,0 +1,53 @@
+@use "sass:math";
+
+.form-field {
+    margin-bottom: 12px;
+}
+
+.form-control {
+    font-size: rem(16px);
+    font-weight: 400;
+    line-height: math.div(22, 16);
+    color: var(--darkblue);
+    box-shadow: none;
+    background-color: var(--lightgray);
+    border: 1px solid var(--lightgray);
+    border-radius: 12px;
+    padding: 11px;
+    display: block;
+    width: 100%;
+    height: 46px;
+    appearance: none;
+
+    &::placeholder {
+        color: var(--darkblue);
+        opacity: 1;
+    }
+
+    &:disabled,
+    &[readonly] {
+        opacity: 1;
+    }
+
+    &:focus {
+        border-color: var(--darkblue);
+        outline: 0;
+    }
+
+    .has-error & {
+        color: var(--red);
+        background-color: var(--lightred);
+        border-color: var(--red);
+
+        &::placeholder {
+            color: var(--red);
+        }
+    }
+}
+
+.form-error {
+    font-size: rem(14px);
+    margin-top: 2px;
+    margin-left: 12px;
+    color: var(--red);
+}

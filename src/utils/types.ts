@@ -12,6 +12,12 @@ export type AppThunk<ReturnType = void> = ThunkAction<ReturnType, RootState, unk
 
 export type AppDispatch = ThunkDispatch<RootState, unknown, TAppActions>;
 
+export type TFormField = {
+    name: string;
+    type: string;
+    placeholder: string;
+};
+
 export type TPhoto = {
     id: number;
     path: string;

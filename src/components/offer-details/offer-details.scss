@@ -1,9 +1,12 @@
 @use "sass:math";
 @import "../../styles/functions";
 
-.offers-item {
+.offer-details {
+    margin-bottom: var(--gutter);
+
     &__outer {
-        border: 1px solid var(--cyan);
+        background-color: var(--lightcyan);
+        border: 1px solid var(--lightcyan);
         border-radius: 12px;
         padding: 11px;
         height: 100%;

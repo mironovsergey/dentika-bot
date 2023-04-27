@@ -1,31 +1,29 @@
 import type { FC } from 'react';
-import { useEffect } from 'react';
-import { useDispatch } from '../../hooks/use-dispatch';
+import { useMemo } from 'react';
 import { useSelector } from '../../hooks/use-selector';
-import { getOffers } from '../../services/actions/offers';
 import OffersItem from '../offers-item/offers-item';
 
 import './offers.scss';
 
 const Offers: FC = () => {
-    const dispatch = useDispatch();
-
     const {
         offers,
         offersRequest,
         offersError
     } = useSelector(({ offers }) => offers);
 
-    useEffect(() => {
-        dispatch(getOffers());
-    }, [dispatch]);
-
-    const offerList = offers.map((item) => (
-        <OffersItem key={item.id} offer={item} />
-    ));
+    const offerList = useMemo(
+        () => (
+            offers.map((item) => (
+                <OffersItem key={item.id} offer={item} />
+            ))
+        ),
+        [offers]
+    );
 
     return (
         <div className="offers">
+            <h1>Счастливые часы в «Дентике»</h1>
             {
                 offersRequest && (
                     <div>Загрузка</div>

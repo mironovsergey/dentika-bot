@@ -1,5 +1,6 @@
-import type { FC, MouseEvent } from 'react';
+import type { FC } from 'react';
 import type { TOffer } from '../../utils/types';
+import { Link } from 'react-router-dom';
 import { getFormatDate, getFormatTime } from '../../utils/helpers';
 
 import { ReactComponent as IconPlus } from '../../images/plus.svg';
@@ -11,43 +12,40 @@ type TOffersItem = {
 };
 
 const OffersItem: FC<TOffersItem> = ({ offer }) => {
-    const handleClick = (event: MouseEvent<HTMLButtonElement>): void => {
-        event.preventDefault();
-        console.log(offer.id);
-    };
+    const { id, timestamp, services, clinic, doctor, discount } = offer;
 
     return (
         <div className="offers-item">
             <div className="offers-item__outer">
                 <div className="offers-item__head">
                     <div className="offers-item__date">
-                        {`${getFormatDate(offer.timestamp)} ${getFormatTime(offer.timestamp)}`}
+                        {`${getFormatDate(timestamp)} ${getFormatTime(timestamp)}`}
                     </div>
                 </div>
                 <div className="offers-item__body">
                     <div className="offers-item__service">
-                        {offer.services}
+                        {services}
                     </div>
                     <div className="offers-item__clinic">
-                        {offer.clinic}
+                        {clinic}
                     </div>
                     <div className="offers-item__doctor">
                         <div className="offers-item__doctor-title">
                             Врач:
                         </div>
                         <div className="offers-item__doctor-name">
-                            {offer.doctor.name}
+                            {doctor.name}
                         </div>
                     </div>
                 </div>
                 <div className="offers-item__foot">
                     <div className="offers-item__discount">
-                        {offer.discount}
+                        {discount}
                     </div>
-                    <div className="offers-item__button">
-                        <button type="button" onClick={handleClick}>
+                    <div className="offers-item__link">
+                        <Link to={String(id)}>
                             <IconPlus />
-                        </button>
+                        </Link>
                     </div>
                 </div>
             </div>

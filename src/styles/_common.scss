@@ -8,14 +8,24 @@
 
 body {
     --duration: #{$duration};
-    --font-open-sans: #{$open-sans};
-    --bg-color: #{$bg-color};
-    --text-color: #{$text-color};
-    --button-color: #{$button-color};
-    --button-text-color: #{$button-text-color};
+    --open-sans: #{$open-sans};
     --gutter: #{$gutter};
 
-    font-family: var(--font-open-sans);
+    --white: #{$white};
+    --lightgray: #{$lightgray};
+    --red: #{$red};
+    --lightred: #{$lightred};
+    --lightblue: #{$lightblue};
+    --darkblue: #{$darkblue};
+    --cyan: #{$cyan};
+    --lightcyan: #{$lightcyan};
+
+    --bg-color: #{$white};
+    --text-color: #{$darkblue};
+    --button-color: #{$lightblue};
+    --button-text-color: #{$white};
+
+    font-family: var(--open-sans);
     font-size: rem(16px);
     font-weight: 400;
     line-height: math.div(24, 16);
@@ -37,4 +47,5 @@ h1 {
     line-height: math.div(29, 21);
     margin-top: 0;
     margin-bottom: 20px;
+    padding-left: 12px;
 }
