@@ -1,12 +1,6 @@
 @use "sass:math";
 
-*,
-*::before,
-*::after {
-    box-sizing: border-box;
-}
-
-body {
+:root {
     --duration: #{$duration};
     --open-sans: #{$open-sans};
     --gutter: #{$gutter};
@@ -19,7 +13,15 @@ body {
     --darkblue: #{$darkblue};
     --cyan: #{$cyan};
     --lightcyan: #{$lightcyan};
+}
 
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+body {
     --bg-color: #{$white};
     --text-color: #{$darkblue};
     --button-color: #{$lightblue};
